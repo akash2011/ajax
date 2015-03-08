@@ -2,19 +2,35 @@
 <html>
 <head>
 <title>Ajax basic</title>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
 <h1>Add Contact Information </h1>
 
 <form id="contact">
-Enter Name:<input type="text" name="name">
-Age: <input type="text" name="age">
+Enter Name:<input type="text" name="name" id="name">
+Age: <input type="text" name="age" id="age">
 <input type="submit" id="contact-form" value="Add Contact">
 </form>
 
 <hr/>
 <h2>List of All contact</h2>
 <div id="contact-list"></div>
+
+<script>
+  $.document.ready(function(){
+    $("#contact-form").click(function(e){
+      e.preventDefault();
+      if($("#name").value===''){
+        alert("Please enter name");
+      }
+      $("#contact-form").hide();
+      
+      
+    });
+    
+  });
+  
+</script>
 </body>
 </html>
